@@ -9,7 +9,7 @@ canvas.style.height = "100%";
 // Genom variabeln c kommer man åt det mesta som
 // med canvas att göra
 const c = canvas.getContext("2d");
-const midX = canvas.width / 2; 
+const midX = canvas.width / 2;
 const midY = canvas.height / 2;
 
 // Matar ut canvas dimensioner till konsolen, pröva att
@@ -21,5 +21,60 @@ Höjd på canvas: ${canvas.height}`
 
 function drawPicture() {
   // Här skriver du funktionen som ritar bilden
+  
+c.lineWidth = "1.5";
+
+function paintSquare1() {
+  c.beginPath();
+
+  c.rect(25, canvas.height - canvas.height / 4, canvas.width / 4, canvas.height / 4);
+  c.stroke();
+}
+paintSquare1();
+
+c.beginPath();
+c.moveTo(25, canvas.height - canvas.height / 4);
+c.lineTo(25+canvas.width / 8, midY-(midY/4));
+c.stroke();
+
+c.beginPath();
+c.moveTo(25 + canvas.width / 4, canvas.height - canvas.height / 4);
+c.lineTo(25+canvas.width / 8, midY-(midY/4));
+c.stroke();
+
+function paintSquare2() {
+  c.beginPath();
+  c.rect(canvas.width - (25 + canvas.width / 4), canvas.height - canvas.height / 4, canvas.width / 4, canvas.height / 4);
+  c.stroke();
+}
+paintSquare2();
+
+c.beginPath();
+c.moveTo(canvas.width - (25 + canvas.width / 4), canvas.height - canvas.height / 4);
+c.lineTo(canvas.width-(25+canvas.width / 8), midY-(midY/4));
+c.stroke();
+
+c.beginPath();
+c.moveTo(canvas.width - 25, canvas.height - canvas.height / 4);
+c.lineTo(canvas.width-(25+canvas.width / 8), midY-(midY/4));
+c.stroke();
+
+function paintTree() {
+  c.fillStyle = 'brown';
+  c.beginPath();
+  c.rect(midX-canvas.width / 48, canvas.height - canvas.height / 8, canvas.width / 24, canvas.height / 8);
+  c.stroke();
+  c.fill();
+  
+}
+paintTree();
+
+
+c.fillStyle = 'green';
+c.beginPath();
+c.ellipse(midX, canvas.height - canvas.height / 3.2, /*100"*/canvas.width/20, midY/2, (Math.PI) *  2, 0.9, Math.PI-0.9 , true);
+c.fill();
+c.stroke()
 }
 drawPicture();
+
