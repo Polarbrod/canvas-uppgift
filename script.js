@@ -75,7 +75,7 @@ paintTree();
 
 c.fillStyle = 'green';
 c.beginPath();
-c.ellipse(midX, height - height / 3.2, width/20, midY/2, (Math.PI) *  2, 0.9, Math.PI-0.9 , true);
+c.ellipse(midX, height - height / 2.84, width/20, midY/2, (Math.PI) *  2, 1.12, Math.PI-1.12 , true);
 c.fill();
 c.stroke()
 }
