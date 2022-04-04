@@ -3,6 +3,8 @@ let canvas = document.querySelector("canvas");
 canvas.width = window.innerWidth;
 canvas.height = 1 * window.innerHeight;
 
+
+
 canvas.style.width = "100%";
 canvas.style.height = "100%";
 
@@ -21,48 +23,49 @@ Höjd på canvas: ${canvas.height}`
 
 function drawPicture() {
   // Här skriver du funktionen som ritar bilden
-  
+  let width = canvas.width
+  let height = canvas.height
 c.lineWidth = "1.5";
 
 function paintSquare1() {
   c.beginPath();
 
-  c.rect(25, canvas.height - canvas.height / 4, canvas.width / 4, canvas.height / 4);
+  c.rect(25, height - height / 4, width / 4, height / 4);
   c.stroke();
 }
 paintSquare1();
 
 c.beginPath();
-c.moveTo(25, canvas.height - canvas.height / 4);
-c.lineTo(25+canvas.width / 8, midY-(midY/4));
+c.moveTo(25, height - height / 4);
+c.lineTo(25+width / 8, midY-(midY/4));
 c.stroke();
 
 c.beginPath();
-c.moveTo(25 + canvas.width / 4, canvas.height - canvas.height / 4);
-c.lineTo(25+canvas.width / 8, midY-(midY/4));
+c.moveTo(25 + width / 4, height - height / 4);
+c.lineTo(25+width / 8, midY-(midY/4));
 c.stroke();
 
 function paintSquare2() {
   c.beginPath();
-  c.rect(canvas.width - (25 + canvas.width / 4), canvas.height - canvas.height / 4, canvas.width / 4, canvas.height / 4);
+  c.rect(width - (25 + width / 4), height - height / 4, width / 4, height / 4);
   c.stroke();
 }
 paintSquare2();
 
 c.beginPath();
-c.moveTo(canvas.width - (25 + canvas.width / 4), canvas.height - canvas.height / 4);
-c.lineTo(canvas.width-(25+canvas.width / 8), midY-(midY/4));
+c.moveTo(width - (25 + width / 4), height - height / 4);
+c.lineTo(width-(25+width / 8), midY-(midY/4));
 c.stroke();
 
 c.beginPath();
-c.moveTo(canvas.width - 25, canvas.height - canvas.height / 4);
-c.lineTo(canvas.width-(25+canvas.width / 8), midY-(midY/4));
+c.moveTo(width - 25, height - height / 4);
+c.lineTo(width-(25+width / 8), midY-(midY/4));
 c.stroke();
 
 function paintTree() {
   c.fillStyle = 'brown';
   c.beginPath();
-  c.rect(midX-canvas.width / 48, canvas.height - canvas.height / 8, canvas.width / 24, canvas.height / 8);
+  c.rect(midX-width / 48, height - height / 8, width / 24, height / 8);
   c.stroke();
   c.fill();
   
@@ -72,7 +75,7 @@ paintTree();
 
 c.fillStyle = 'green';
 c.beginPath();
-c.ellipse(midX, canvas.height - canvas.height / 3.2, /*100"*/canvas.width/20, midY/2, (Math.PI) *  2, 0.9, Math.PI-0.9 , true);
+c.ellipse(midX, height - height / 3.2, width/20, midY/2, (Math.PI) *  2, 0.9, Math.PI-0.9 , true);
 c.fill();
 c.stroke()
 }
